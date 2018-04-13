@@ -1,6 +1,13 @@
 import merge from 'lodash/merge'
 import { makeExecutableSchema } from 'graphql-tools'
 
+import GeneralTypes from './types/general'
+import Scalars from './types/scalars'
+import Board from './types/Board'
+import User from './types/User'
+import Card from './types/Card'
+import scalars from './types/scalars';
+
 const Root = /* GraphQL */ `
   type Query {
 		dummy: String
@@ -16,10 +23,20 @@ const Root = /* GraphQL */ `
 	}
 `
 
-const resolvers = {}
+const resolvers = merge(
+  {},
+  scalars.resolvers
+)
 
 const schema = makeExecutableSchema({
-  typeDefs: [],
+  typeDefs: [
+    Root,
+    Scalars.typeDefs,
+    Board,
+    User,
+    Card,
+    GeneralTypes
+  ],
   resolvers
 })
 

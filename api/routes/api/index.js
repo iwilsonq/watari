@@ -1,15 +1,19 @@
 // @flow
 import { Router } from 'express';
-import graphiql from './graphiql';
-import graphql from './graphql';
+import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
+import schema from '../../schema';
 
 const apiRouter = Router();
 
-// Only allow GraphiQL in development
-if (process.env.NODE_ENV === 'development') {
-  apiRouter.use('/graphiql', graphiql);
-}
+apiRouter.use('/graphql', graphqlExpress({
+  schema,
+  context: {}
+}));
 
-apiRouter.use('/', graphql);
+if (process.env.NODE_ENV !== 'production') {
+  apiRouter.use('/graphiql', graphiqlExpress({
+    endpointURL: '/api/graphql'
+  }));
+}
 
 export default apiRouter;
