@@ -32,7 +32,7 @@ const Board = /* GraphQL */ `
     owner: User
     memberConnection(first: Int = 10, after: String): BoardMembersConnection!
     cardConnection(first: Int = 10, after: String): BoardCardsConnection!
-
+    lists: List
 
     metaData: BoardMetaData
     created: Date

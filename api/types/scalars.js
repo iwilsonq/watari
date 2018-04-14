@@ -4,17 +4,17 @@
  * both their type definitions and their resolvers
  */
 
-const GraphQLDate = require('graphql-date');
+const GraphQLDate = require('graphql-date')
 
 const typeDefs = /* GraphQL */ `
 	scalar Date
-`;
+`
 
 const resolvers = {
-  Date: GraphQLDate,
-};
+	Date: GraphQLDate
+}
 
 export default {
-  typeDefs,
-  resolvers,
-};
+	typeDefs,
+	resolvers
+}
