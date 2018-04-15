@@ -27,8 +27,8 @@ const Board = /* GraphQL */ `
   type Board {
     id: ID!
     name: String!
-    boardSlug: String
-    teamSlug: String
+    slug: String
+    team: String
     description: String
     isPrivate: Boolean
     owner: User
@@ -42,7 +42,7 @@ const Board = /* GraphQL */ `
   }
 
   extend type Query {
-    board(id: ID): Board
+    board(id: ID, teamSlug: String, boardSlug: String): Board
   }
 `
 
