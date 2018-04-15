@@ -27,6 +27,8 @@ const Board = /* GraphQL */ `
   type Board {
     id: ID!
     name: String!
+    boardSlug: String
+    teamSlug: String
     description: String
     isPrivate: Boolean
     owner: User

@@ -5,7 +5,6 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import keys from './config/keys'
 import apiRoutes from './routes/api'
-import BoardModel from './models/board'
 
 const PORT = process.env.PORT || 3000
 
@@ -25,4 +24,14 @@ app.use(bodyParser.json())
 
 app.use('/api', apiRoutes)
 
-app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`))
+// import type { Loader } from './loaders/types'
+export type GraphQLContext = {
+	// 	user: DBUser,
+	loaders: {
+		[key: string]: Loader
+	}
+}
+
+app.listen(PORT, () =>
+	console.log(`Listening at http://localhost:${PORT}`)
+)
