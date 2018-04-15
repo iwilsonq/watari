@@ -29,6 +29,7 @@ const Board = /* GraphQL */ `
     name: String!
     slug: String
     team: String
+    teamSlug: String
     description: String
     isPrivate: Boolean
     owner: User
@@ -43,6 +44,17 @@ const Board = /* GraphQL */ `
 
   extend type Query {
     board(id: ID, teamSlug: String, boardSlug: String): Board
+  }
+
+  input CreateBoardInput {
+    name: String!
+		description: String
+    team: String
+		isPrivate: Boolean
+  }
+
+  extend type Mutation {
+    createBoard(input: CreateBoardInput): Board
   }
 `
 

@@ -24,9 +24,11 @@ app.use(bodyParser.json())
 
 app.use('/api', apiRoutes)
 
-// import type { Loader } from './loaders/types'
+import type { Loader } from './loaders/types'
 export type GraphQLContext = {
-	// 	user: DBUser,
+	user: {
+		userId: 'abc123'
+	},
 	loaders: {
 		[key: string]: Loader
 	}

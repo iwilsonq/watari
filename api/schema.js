@@ -9,7 +9,9 @@ import User from './types/User'
 import Card from './types/Card'
 import scalars from './types/scalars'
 
-import BoardQueries from 'queries/Board'
+import BoardQueries from 'queries/board'
+
+import BoardMutations from 'mutations/board'
 
 const Root = /* GraphQL */ `
   type Query {
@@ -26,7 +28,12 @@ const Root = /* GraphQL */ `
 	}
 `
 
-const resolvers = merge({}, scalars.resolvers, BoardQueries)
+const resolvers = merge(
+	{},
+	scalars.resolvers,
+	BoardQueries,
+	BoardMutations
+)
 
 const schema = makeExecutableSchema({
 	typeDefs: [
