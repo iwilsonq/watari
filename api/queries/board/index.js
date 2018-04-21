@@ -1,9 +1,13 @@
 // @flow
 import board from './rootBoard'
+import cardConnection from './cardConnection'
 
 export default {
 	Query: {
-		board
+		board,
+		boards: board
 	},
-	Board: {}
+	Board: {
+		cardConnection
+	}
 }

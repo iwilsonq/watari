@@ -5,4 +5,11 @@ const general = /* GraphQL */ `
 	}
 `
 
+export type PaginationOptions = {
+	first: string,
+	after: string,
+	before: string,
+	last: string
+}
+
 export default general

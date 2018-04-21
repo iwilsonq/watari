@@ -1,3 +1,6 @@
 node_modules
+dist
 .env
-config/dev
+config/dev.js
+config/prod.js
+config/cli.js

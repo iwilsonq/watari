@@ -1,0 +1,12 @@
+[include]
+  .*/api
+
+[options]
+  module.name_mapper='^utils\(.*\)$' -> '<PROJECT_ROOT>/api/utils/\1'
+  module.name_mapper='^types\(.*\)$' -> '<PROJECT_ROOT>/api/types/\1'
+  module.name_mapper='^queries\(.*\)$' -> '<PROJECT_ROOT>/api/queries/\1'
+  module.name_mapper='^mutations\(.*\)$' -> '<PROJECT_ROOT>/api/mutations/\1'
+  module.name_mapper='^models\(.*\)$' -> '<PROJECT_ROOT>/api/models/\1'
+  module.name_mapper='^config\(.*\)$' -> '<PROJECT_ROOT>/api/config/\1'
+  module.name_mapper='^test\(.*\)$' -> '<PROJECT_ROOT>/api/test/\1'
+  module.name_mapper='^routes\(.*\)$' -> '<PROJECT_ROOT>/api/routes/\1'

@@ -1,7 +1,7 @@
 // @flow
 
-export const slugify = (name: string) => {
-	return name
+export const slugify = (title: string) => {
+	return title
 		.toString()
 		.toLowerCase()
 		.replace(/\s+/g, '-') // Replace spaces with -

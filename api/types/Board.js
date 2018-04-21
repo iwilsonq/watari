@@ -26,7 +26,7 @@ const Board = /* GraphQL */ `
 
   type Board {
     id: ID!
-    name: String!
+    title: String!
     slug: String
     team: String
     teamSlug: String
@@ -44,10 +44,11 @@ const Board = /* GraphQL */ `
 
   extend type Query {
     board(id: ID, teamSlug: String, boardSlug: String): Board
+    boards(teamSlug: String): [Board]
   }
 
   input CreateBoardInput {
-    name: String!
+    title: String!
 		description: String
     team: String
 		isPrivate: Boolean
@@ -55,6 +56,7 @@ const Board = /* GraphQL */ `
 
   extend type Mutation {
     createBoard(input: CreateBoardInput): Board
+    deleteBoard(id: ID!): Board
   }
 `
 
